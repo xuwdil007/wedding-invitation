@@ -361,6 +361,36 @@
       letter-spacing: 0.12em;
     }
 
+    .language-switcher {
+      display: flex;
+      gap: 3px;
+      padding: 3px;
+      border: 1px solid rgba(185,154,85,0.28);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.62);
+    }
+
+    .language-button {
+      padding: 7px 9px;
+      border: 0;
+      border-radius: 999px;
+      color: var(--muted);
+      background: transparent;
+      font: inherit;
+      font-size: 0.63rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .language-button.active {
+      color: white;
+      background: var(--brown);
+    }
+
+    body.lang-tj .gallery-item::after {
+      content: "Кушодан";
+    }
+
     /* HERO */
 
     .hero {
@@ -1730,6 +1760,14 @@
         grid-template-columns: 1fr;
       }
 
+      .nav-confirm {
+        display: none;
+      }
+
+      .language-button {
+        padding: 7px 8px;
+      }
+
       .section-title {
         line-height: 1;
       }
@@ -1791,6 +1829,11 @@
         <a href="#confirm">
           Подтверждение
         </a>
+      </div>
+
+      <div class="language-switcher" aria-label="Выбор языка">
+        <button class="language-button active" type="button" data-language="ru">RU</button>
+        <button class="language-button" type="button" data-language="tj">TJ</button>
       </div>
 
       <a
@@ -2480,6 +2523,99 @@
     // Вставьте сюда URL веб-приложения Google Apps Script после его публикации.
     const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbwWn4a42E8EzmVRvJDOl466h7rSj0WF4OInuy38tlvhXKJgeDEUXqxcmnbU7km4KvG9/exec";
 
+    const tajikTranslations = {
+      "Приглашение": "Даъватнома",
+      "Программа": "Барнома",
+      "Локация": "Макон",
+      "Галерея": "Аксҳо",
+      "Подтверждение": "Тасдиқ",
+      "Ответить": "Ҷавоб додан",
+      "Мы приглашаем вас разделить этот день с нами": "Шуморо даъват менамоем, ки ин рӯзро бо мо якҷо гузаронед",
+      "06 сентября 2026 · 18:00": "06 сентябри 2026 · 18:00",
+      "Ресторан Тайга · Душанбе": "Тарабхонаи Тайга · Душанбе",
+      "Открыть приглашение": "Кушодани даъватнома",
+      "Листайте": "Ба поён",
+      "Дорогие родные и друзья": "Наздикон ва дӯстони азиз",
+      "С любовью приглашаем вас": "Бо муҳаббат шуморо даъват мекунем",
+      "Есть дни, которые становятся частью нашей истории навсегда. Мы будем счастливы, если один из самых важных дней нашей жизни вы разделите вместе с нами.": "Рӯзҳое ҳастанд, ки то абад қисми таърихи мо мешаванд. Хушбахт мешавем, агар яке аз муҳимтарин рӯзҳои ҳаёти моро бо мо якҷо гузаронед.",
+      "В этот вечер мы хотим быть рядом с людьми, которые занимают особенное место в наших сердцах. Ваше присутствие станет прекрасной частью начала нашей семейной истории.": "Дар ин шом мехоҳем бо онҳое бошем, ки дар қалби мо ҷойи махсус доранд. Ҳузури шумо оғози таърихи оилавии моро боз ҳам зеботар мегардонад.",
+      "До нашей свадьбы": "То тӯйи мо",
+      "Осталось совсем немного": "Вақти каме боқӣ мондааст",
+      "Дней": "Рӯз",
+      "Часов": "Соат",
+      "Минут": "Дақиқа",
+      "Секунд": "Сония",
+      "06 сентября": "06 сентябр",
+      "Программа вечера": "Барномаи шом",
+      "Мы подготовили вечер, наполненный красивыми моментами, тёплыми словами, музыкой и праздником.": "Мо шомеро омода кардем, ки пур аз лаҳзаҳои зебо, суханони гарм, мусиқӣ ва шодӣ аст.",
+      "Церемония": "Маросим",
+      "Начало нашего особенного вечера. Просим гостей прибыть немного заранее, чтобы мы могли начать церемонию вместе.": "Оғози шоми махсуси мо. Аз меҳмонон хоҳиш мекунем каме барвақттар биёянд, то маросимро якҷо оғоз намоем.",
+      "Праздничный ужин": "Шоми идона",
+      "Соберёмся вместе за праздничным столом, чтобы разделить этот вечер, тёплые слова и самые важные моменты.": "Дар гирди дастархони идона ҷамъ мешавем, то ин шом, суханони гарм ва лаҳзаҳои муҳимро бо ҳам гузаронем.",
+      "Танцы": "Рақс",
+      "Музыка, улыбки и праздник, который мы надеемся запомнить вместе с вами на долгие годы.": "Мусиқӣ, табассум ва ҷашне, ки умедворем солҳои зиёд бо шумо дар хотир мемонад.",
+      "Место встречи": "Ҷойи вохӯрӣ",
+      "Свадебное торжество": "Ҷашни арӯсӣ",
+      "Ресторан Тайга": "Тарабхонаи Тайга",
+      "Душанбе, 3-й проезд улицы Бободжана Гафурова": "Душанбе, гузаргоҳи 3-юми кӯчаи Бобоҷон Ғафуров",
+      "Открыть карту": "Кушодани харита",
+      "Наша история": "Қиссаи мо",
+      "Нажмите на изображение, чтобы открыть его полностью.": "Барои пурра дидани акс онро пахш кунед.",
+      "Будете ли вы с нами?": "Оё бо мо хоҳед буд?",
+      "Подтвердите присутствие": "Ҳузури худро тасдиқ кунед",
+      "Пожалуйста, сообщите нам, сможете ли вы разделить этот особенный день вместе с нами.": "Лутфан ба мо хабар диҳед, ки оё метавонед ин рӯзи махсусро бо мо гузаронед.",
+      "Ваше имя": "Номи шумо",
+      "Вы сможете присутствовать?": "Оё иштирок карда метавонед?",
+      "Да, с радостью": "Бале, бо хушнудӣ",
+      "К сожалению, нет": "Мутаассифона, не",
+      "Сообщение для молодожёнов": "Паём ба навхонадорон",
+      "Отправить ответ": "Фиристодани ҷавоб",
+      "Спасибо!": "Ташаккур!",
+      "Ваш ответ получен. Спасибо, что сообщили нам о своём присутствии.": "Ҷавоби шумо қабул шуд. Ташаккур, ки ба мо хабар додед.",
+      "06 · 09 · 2026 · Душанбе": "06 · 09 · 2026 · Душанбе",
+      "С любовью ждём вас на нашем празднике": "Бо муҳаббат шуморо дар ҷашни худ интизорем"
+    };
+
+    const originalTexts = new WeakMap();
+
+    function setLanguage(language) {
+      const useTajik = language === "tj";
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+
+      while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+      textNodes.forEach(node => {
+        if (["SCRIPT", "STYLE"].includes(node.parentElement?.tagName)) return;
+        const currentText = node.textContent.trim().replace(/\s+/g, " ");
+        if (!currentText) return;
+
+        if (!originalTexts.has(node)) originalTexts.set(node, currentText);
+        const russianText = originalTexts.get(node);
+        node.textContent = useTajik && tajikTranslations[russianText]
+          ? tajikTranslations[russianText]
+          : russianText;
+      });
+
+      document.documentElement.lang = useTajik ? "tg" : "ru";
+      document.body.classList.toggle("lang-tj", useTajik);
+      document.title = useTajik ? "Даъватнома" : "Приглашение";
+      document.getElementById("guestName").placeholder = useTajik ? "Ном ва насаб" : "Имя и фамилия";
+      document.getElementById("message").placeholder = useTajik ? "Табрикот ё паёми худро нависед..." : "Оставьте пожелание или сообщение...";
+
+      document.querySelectorAll("[data-language]").forEach(button => {
+        button.classList.toggle("active", button.dataset.language === language);
+      });
+
+      localStorage.setItem("weddingLanguage", language);
+    }
+
+    document.querySelectorAll("[data-language]").forEach(button => {
+      button.addEventListener("click", () => setLanguage(button.dataset.language));
+    });
+
+    setLanguage(localStorage.getItem("weddingLanguage") || "ru");
+
 
     const weddingDate =
       new Date(
@@ -2867,7 +3003,9 @@
           );
 
         if (RSVP_ENDPOINT.includes("PASTE_")) {
-          alert("Форма ещё не подключена. Добавьте адрес Google Apps Script.");
+          alert(document.documentElement.lang === "tg"
+            ? "Шакл ҳоло пайваст нашудааст."
+            : "Форма ещё не подключена. Добавьте адрес Google Apps Script.");
           return;
         }
 
@@ -2878,7 +3016,9 @@
           submitButton.innerHTML;
 
         submitButton.disabled = true;
-        submitButton.textContent = "Отправляем…";
+        submitButton.textContent = document.documentElement.lang === "tg"
+          ? "Фиристода истодаем…"
+          : "Отправляем…";
 
         try {
           await fetch(
@@ -2892,7 +3032,9 @@
         } catch (error) {
           submitButton.disabled = false;
           submitButton.innerHTML = originalButtonText;
-          alert("Не удалось отправить ответ. Проверьте интернет и попробуйте ещё раз.");
+          alert(document.documentElement.lang === "tg"
+            ? "Ҷавоб фиристода нашуд. Интернетро санҷида, боз кӯшиш кунед."
+            : "Не удалось отправить ответ. Проверьте интернет и попробуйте ещё раз.");
           return;
         }
 
