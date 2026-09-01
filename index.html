@@ -1,0 +1,3023 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Приглашение</title>
+
+  <meta
+    name="description"
+    content="Свадебное приглашение Мехроны и Аминодоба. 06 сентября 2026 года, ресторан Тайга, Душанбе."
+  />
+
+  <link rel="icon" type="image/svg+xml" href="wedding-rings.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      font-family: "Lato", sans-serif;
+      font-weight: 300;
+      color: #4b3d3b;
+
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(219, 171, 165, 0.18),
+          transparent 38%
+        ),
+        radial-gradient(
+          circle at 90% 20%,
+          rgba(209, 176, 103, 0.12),
+          transparent 30%
+        ),
+        #fbf7f1;
+    }
+
+    body.no-scroll {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    :root {
+      --cream: #fbf7f1;
+      --cream-dark: #f2e8dc;
+
+      --rose: #c78f8b;
+      --rose-soft: #e7c9c6;
+      --rose-light: #f4e4e2;
+
+      --gold: #b99a55;
+      --gold-light: #dfc990;
+
+      --brown: #4c3a38;
+      --muted: #7b6b68;
+
+      --shadow:
+        0 24px 80px rgba(93, 67, 58, 0.11);
+
+      --serif:
+        "Cormorant Garamond",
+        serif;
+
+      --sans:
+        "Lato",
+        sans-serif;
+
+      --radius-lg: 32px;
+      --container: 1180px;
+    }
+
+    .container {
+      width: min(
+        calc(100% - 32px),
+        var(--container)
+      );
+
+      margin-inline: auto;
+    }
+
+    .section {
+      position: relative;
+      padding: 92px 0;
+    }
+
+    .section-title {
+      margin: 0;
+
+      font-family: var(--serif);
+
+      font-size: clamp(
+        2.8rem,
+        8vw,
+        5.5rem
+      );
+
+      font-weight: 500;
+      line-height: 0.95;
+
+      color: var(--brown);
+
+      text-align: center;
+    }
+
+    .section-subtitle {
+      max-width: 650px;
+      margin: 24px auto 0;
+
+      color: var(--muted);
+
+      font-size: 0.95rem;
+      line-height: 1.9;
+
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 12px;
+
+      margin-bottom: 18px;
+
+      color: var(--gold);
+
+      font-size: 0.72rem;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "";
+
+      width: 36px;
+      height: 1px;
+
+      background: currentColor;
+
+      opacity: 0.6;
+    }
+
+    .glass-card {
+      border:
+        1px solid rgba(255, 255, 255, 0.65);
+
+      background:
+        rgba(255, 255, 255, 0.48);
+
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+
+      box-shadow: var(--shadow);
+    }
+
+    .gold-button {
+      position: relative;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 10px;
+
+      min-height: 52px;
+      padding: 0 28px;
+
+      overflow: hidden;
+
+      border:
+        1px solid rgba(185, 154, 85, 0.5);
+
+      border-radius: 999px;
+
+      color: #fffaf2;
+
+      background:
+        linear-gradient(
+          135deg,
+          #a98847 0%,
+          #c9ad6c 45%,
+          #a88848 100%
+        );
+
+      font-size: 0.75rem;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 12px 30px rgba(165, 133, 68, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .gold-button:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 18px 35px rgba(165, 133, 68, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    }
+
+    /* NAVIGATION */
+
+    .nav-wrapper {
+      position: fixed;
+
+      z-index: 1000;
+
+      top: 18px;
+      left: 0;
+
+      width: 100%;
+
+      padding: 0 16px;
+
+      pointer-events: none;
+    }
+
+    .navbar {
+      width: min(100%, 1080px);
+
+      margin: 0 auto;
+
+      padding: 10px 10px 10px 18px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      border:
+        1px solid rgba(255, 255, 255, 0.64);
+
+      border-radius: 999px;
+
+      background:
+        rgba(255, 250, 245, 0.65);
+
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+
+      box-shadow:
+        0 10px 40px rgba(80, 56, 50, 0.08);
+
+      pointer-events: auto;
+    }
+
+    .logo {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-style: italic;
+
+      color: var(--brown);
+
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+
+      gap: 24px;
+    }
+
+    .nav-links a {
+      position: relative;
+
+      color: #665451;
+
+      font-size: 0.73rem;
+      font-weight: 400;
+
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .nav-links a::after {
+      content: "";
+
+      position: absolute;
+
+      left: 50%;
+      bottom: -7px;
+
+      width: 0;
+      height: 1px;
+
+      background: var(--gold);
+
+      transform: translateX(-50%);
+
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-confirm {
+      padding: 11px 18px;
+
+      border-radius: 999px;
+
+      background: var(--brown);
+
+      color: white;
+
+      font-size: 0.67rem;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+
+      min-height: 100svh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 130px 20px 70px;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,0.2),
+          rgba(251,247,241,0.4)
+        ),
+        radial-gradient(
+          circle at 50% 25%,
+          rgba(231, 201, 198, 0.72),
+          transparent 32%
+        ),
+        linear-gradient(
+          135deg,
+          #fffaf5,
+          #f7ede6 50%,
+          #f4e5e2
+        );
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 30px;
+
+      border:
+        1px solid rgba(185, 154, 85, 0.25);
+
+      border-radius: 32px;
+
+      pointer-events: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+
+      width: 420px;
+      height: 420px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255, 255, 255, 0.45);
+
+      filter: blur(70px);
+
+      animation:
+        heroGlow 7s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroGlow {
+      from {
+        transform: scale(0.85);
+        opacity: 0.5;
+      }
+
+      to {
+        transform: scale(1.18);
+        opacity: 0.9;
+      }
+    }
+
+    .hero-content {
+      position: relative;
+
+      z-index: 4;
+
+      width: 100%;
+      max-width: 1000px;
+
+      text-align: center;
+    }
+
+    .hero-small {
+      margin-bottom: 24px;
+
+      color: var(--gold);
+
+      font-size: 0.72rem;
+
+      text-transform: uppercase;
+      letter-spacing: 0.35em;
+
+      opacity: 0;
+
+      animation:
+        fadeUp 1s 0.3s forwards;
+    }
+
+    .hero-names {
+      position: relative;
+
+      margin: 0;
+
+      font-family: var(--serif);
+
+      font-size: clamp(
+        3.9rem,
+        16vw,
+        9.5rem
+      );
+
+      font-weight: 400;
+
+      line-height: 0.72;
+
+      letter-spacing: -0.055em;
+
+      color: var(--brown);
+
+      opacity: 0;
+
+      animation:
+        heroNames
+        1.5s
+        0.5s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+    }
+
+    .hero-names .amp {
+      display: block;
+
+      margin: 18px 0 14px;
+
+      font-size: 0.42em;
+
+      font-style: italic;
+
+      color: var(--rose);
+
+      transform: rotate(-8deg);
+    }
+
+    @keyframes heroNames {
+      from {
+        opacity: 0;
+
+        transform:
+          translateY(40px)
+          scale(0.94);
+
+        filter: blur(8px);
+      }
+
+      to {
+        opacity: 1;
+
+        transform:
+          translateY(0)
+          scale(1);
+
+        filter: blur(0);
+      }
+    }
+
+    .hero-divider {
+      width: 80px;
+      height: 1px;
+
+      margin: 52px auto 28px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
+
+      opacity: 0;
+
+      animation:
+        fadeUp 1s 1s forwards;
+    }
+
+    .hero-date {
+      margin: 0;
+
+      color: #695755;
+
+      font-family: var(--serif);
+
+      font-size: clamp(
+        1.35rem,
+        5vw,
+        2rem
+      );
+
+      font-style: italic;
+
+      opacity: 0;
+
+      animation:
+        fadeUp 1s 1.15s forwards;
+    }
+
+    .hero-place {
+      margin-top: 10px;
+
+      color: var(--muted);
+
+      font-size: 0.74rem;
+
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+
+      opacity: 0;
+
+      animation:
+        fadeUp 1s 1.3s forwards;
+    }
+
+    .hero-cta {
+      margin-top: 38px;
+
+      opacity: 0;
+
+      animation:
+        fadeUp 1s 1.45s forwards;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+
+        transform:
+          translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+
+        transform:
+          translateY(0);
+      }
+    }
+
+    .scroll-indicator {
+      position: absolute;
+
+      z-index: 5;
+
+      bottom: 36px;
+      left: 50%;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      gap: 10px;
+
+      color: var(--gold);
+
+      transform:
+        translateX(-50%);
+    }
+
+    .scroll-indicator span {
+      font-size: 0.57rem;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.28em;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 35px;
+
+      overflow: hidden;
+
+      background:
+        rgba(185, 154, 85, 0.28);
+    }
+
+    .scroll-line::after {
+      content: "";
+
+      display: block;
+
+      width: 100%;
+      height: 15px;
+
+      background: var(--gold);
+
+      animation:
+        scrollLine 2s infinite;
+    }
+
+    @keyframes scrollLine {
+      from {
+        transform: translateY(-20px);
+      }
+
+      to {
+        transform: translateY(40px);
+      }
+    }
+
+    /* PETALS */
+
+    #petals {
+      position: absolute;
+
+      z-index: 2;
+
+      inset: 0;
+
+      overflow: hidden;
+
+      pointer-events: none;
+    }
+
+    .petal {
+      position: absolute;
+
+      top: -30px;
+
+      border-radius:
+        70% 30% 70% 30%;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,255,255,0.9),
+          rgba(211,148,146,0.7)
+        );
+
+      box-shadow:
+        0 2px 10px rgba(190, 120, 115, 0.12);
+
+      animation:
+        petalFall linear infinite,
+        petalSwing ease-in-out infinite alternate;
+    }
+
+    @keyframes petalFall {
+      from {
+        transform:
+          translateY(-10vh)
+          rotate(0deg);
+      }
+
+      to {
+        transform:
+          translateY(115vh)
+          rotate(360deg);
+      }
+    }
+
+    @keyframes petalSwing {
+      from {
+        margin-left: -30px;
+      }
+
+      to {
+        margin-left: 40px;
+      }
+    }
+
+    /* INTRO */
+
+    .intro {
+      text-align: center;
+    }
+
+    .intro-monogram {
+      width: 92px;
+      height: 92px;
+
+      margin: 0 auto 34px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border:
+        1px solid var(--gold-light);
+
+      border-radius: 50%;
+
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-style: italic;
+
+      color: var(--gold);
+
+      transform: rotate(-6deg);
+    }
+
+    .intro-text {
+      max-width: 730px;
+
+      margin: 32px auto 0;
+
+      font-family: var(--serif);
+
+      font-size: clamp(
+        1.45rem,
+        5vw,
+        2.3rem
+      );
+
+      line-height: 1.45;
+
+      color: var(--brown);
+    }
+
+    /* COUNTDOWN */
+
+    .countdown-section {
+      overflow: hidden;
+    }
+
+    .countdown-wrapper {
+      position: relative;
+
+      padding: 55px 22px;
+
+      border-radius:
+        var(--radius-lg);
+
+      background:
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(244, 228, 226, 0.85),
+          transparent 45%
+        ),
+        rgba(255,255,255,0.58);
+
+      text-align: center;
+    }
+
+    .countdown {
+      margin-top: 45px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 12px;
+    }
+
+    .countdown-item {
+      min-height: 120px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+      justify-content: center;
+
+      border:
+        1px solid rgba(185, 154, 85, 0.2);
+
+      border-radius: 20px;
+
+      background:
+        rgba(255,255,255,0.48);
+    }
+
+    .countdown-number {
+      font-family: var(--serif);
+
+      font-size: clamp(
+        3rem,
+        12vw,
+        5rem
+      );
+
+      line-height: 0.9;
+
+      color: var(--brown);
+    }
+
+    .countdown-label {
+      margin-top: 10px;
+
+      color: var(--gold);
+
+      font-size: 0.62rem;
+
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+
+    /* PROGRAM */
+
+    .program {
+      margin-top: 58px;
+    }
+
+    .timeline {
+      position: relative;
+
+      max-width: 720px;
+
+      margin: auto;
+    }
+
+    .timeline::before {
+      content: "";
+
+      position: absolute;
+
+      top: 15px;
+      bottom: 15px;
+      left: 22px;
+
+      width: 1px;
+
+      background:
+        linear-gradient(
+          var(--gold-light),
+          rgba(185, 154, 85, 0.08)
+        );
+    }
+
+    .timeline-item {
+      position: relative;
+
+      display: grid;
+
+      grid-template-columns:
+        45px 1fr;
+
+      gap: 20px;
+
+      padding-bottom: 38px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: relative;
+
+      z-index: 2;
+
+      width: 11px;
+      height: 11px;
+
+      margin: 10px auto 0;
+
+      border:
+        3px solid var(--cream);
+
+      border-radius: 50%;
+
+      background: var(--gold);
+
+      box-shadow:
+        0 0 0 1px var(--gold);
+    }
+
+    .timeline-content {
+      padding: 0 0 12px;
+    }
+
+    .timeline-time {
+      color: var(--gold);
+
+      font-size: 0.7rem;
+      font-weight: 700;
+
+      letter-spacing: 0.16em;
+    }
+
+    .timeline-title {
+      margin: 5px 0 7px;
+
+      font-family: var(--serif);
+
+      font-size: 2rem;
+      font-weight: 500;
+
+      color: var(--brown);
+    }
+
+    .timeline-description {
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* LOCATION */
+
+    .location-card {
+      margin-top: 50px;
+
+      overflow: hidden;
+
+      display: grid;
+
+      border-radius:
+        var(--radius-lg);
+
+      background: white;
+
+      box-shadow: var(--shadow);
+    }
+
+    .location-content {
+      padding: 42px 28px;
+    }
+
+    .location-label {
+      color: var(--gold);
+
+      font-size: 0.7rem;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .location-title {
+      margin: 12px 0 10px;
+
+      font-family: var(--serif);
+
+      font-size: clamp(
+        2.5rem,
+        8vw,
+        4.5rem
+      );
+
+      font-weight: 500;
+
+      color: var(--brown);
+    }
+
+    .location-address {
+      margin-bottom: 28px;
+
+      color: var(--muted);
+
+      line-height: 1.7;
+    }
+
+    .location-map {
+      position: relative;
+
+      min-height: 360px;
+
+      background:
+        linear-gradient(
+          rgba(70,50,46,0.1),
+          rgba(70,50,46,0.1)
+        ),
+        url(
+          "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80"
+        )
+        center / cover;
+    }
+
+    .map-overlay {
+      position: absolute;
+
+      inset: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background:
+        rgba(76, 58, 56, 0.12);
+    }
+
+    .map-pin {
+      width: 88px;
+      height: 88px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border:
+        1px solid rgba(255,255,255,0.65);
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,0.65);
+
+      backdrop-filter: blur(14px);
+
+      font-size: 2rem;
+
+      box-shadow:
+        0 18px 45px rgba(0,0,0,0.15);
+
+      animation:
+        mapPulse 2.5s infinite;
+    }
+
+    @keyframes mapPulse {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.08);
+      }
+    }
+
+    /* GALLERY */
+
+    .gallery {
+      margin-top: 50px;
+
+      display: grid;
+
+      grid-template-columns: 1fr;
+
+      gap: 12px;
+    }
+
+    .gallery-item {
+      position: relative;
+
+      overflow: hidden;
+
+      min-height: 310px;
+
+      padding: 0;
+
+      border: 0;
+      border-radius: 20px;
+
+      background: #eee;
+
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition:
+        transform
+        0.8s
+        cubic-bezier(0.16,1,0.3,1),
+
+        filter
+        0.5s
+        ease;
+    }
+
+    .gallery-item::after {
+      content: "Открыть";
+
+      position: absolute;
+
+      right: 18px;
+      bottom: 18px;
+
+      padding: 8px 13px;
+
+      border:
+        1px solid rgba(255,255,255,0.45);
+
+      border-radius: 999px;
+
+      color: white;
+
+      background:
+        rgba(60,40,38,0.24);
+
+      backdrop-filter: blur(10px);
+
+      font-size: 0.62rem;
+
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+
+      opacity: 0;
+
+      transform: translateY(8px);
+
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.055);
+
+      filter: brightness(0.92);
+    }
+
+    .gallery-item:hover::after {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+    /* LIGHTBOX */
+
+    .lightbox {
+      position: fixed;
+
+      z-index: 5000;
+
+      inset: 0;
+
+      padding: 24px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      visibility: hidden;
+      opacity: 0;
+
+      background:
+        rgba(34, 25, 24, 0.86);
+
+      backdrop-filter: blur(14px);
+
+      transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+    }
+
+    .lightbox.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .lightbox img {
+      max-width:
+        min(100%, 1100px);
+
+      max-height: 86vh;
+
+      border-radius: 20px;
+
+      box-shadow:
+        0 30px 100px rgba(0,0,0,0.4);
+
+      transform: scale(0.92);
+
+      transition:
+        transform 0.35s ease;
+    }
+
+    .lightbox.active img {
+      transform: scale(1);
+    }
+
+    .lightbox-close {
+      position: absolute;
+
+      top: 24px;
+      right: 24px;
+
+      width: 48px;
+      height: 48px;
+
+      border:
+        1px solid rgba(255,255,255,0.25);
+
+      border-radius: 50%;
+
+      color: white;
+
+      background:
+        rgba(255,255,255,0.08);
+
+      font-size: 1.5rem;
+
+      cursor: pointer;
+    }
+
+    /* CONFIRMATION */
+
+    .confirm-section {
+      background:
+        linear-gradient(
+          180deg,
+          #f7eee8,
+          #f9f4ed
+        );
+    }
+
+    .confirm-container {
+      max-width: 850px;
+
+      margin: 50px auto 0;
+
+      padding: 28px 20px;
+
+      border-radius:
+        var(--radius-lg);
+    }
+
+    .form-grid {
+      display: grid;
+
+      gap: 20px;
+    }
+
+    .field-group {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 9px;
+    }
+
+    .field-group > label {
+      color: #665451;
+
+      font-size: 0.7rem;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+
+      border:
+        1px solid rgba(185,154,85,0.24);
+
+      border-radius: 14px;
+
+      outline: none;
+
+      color: var(--brown);
+
+      background:
+        rgba(255,255,255,0.62);
+
+      transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+    }
+
+    input {
+      height: 54px;
+
+      padding: 0 16px;
+    }
+
+    textarea {
+      min-height: 130px;
+
+      padding: 16px;
+
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color:
+        rgba(185,154,85,0.7);
+
+      background:
+        rgba(255,255,255,0.92);
+
+      box-shadow:
+        0 0 0 4px
+        rgba(185,154,85,0.08);
+    }
+
+    .attendance-buttons {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 10px;
+    }
+
+    .attendance-option {
+      position: relative;
+    }
+
+    .attendance-option input {
+      position: absolute;
+
+      opacity: 0;
+
+      pointer-events: none;
+    }
+
+    .attendance-option label {
+      min-height: 54px;
+
+      padding: 10px 12px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      border:
+        1px solid rgba(185,154,85,0.25);
+
+      border-radius: 14px;
+
+      color: var(--muted);
+
+      background:
+        rgba(255,255,255,0.54);
+
+      cursor: pointer;
+
+      transition: 0.25s ease;
+    }
+
+    .attendance-option
+    input:checked
+    + label {
+      border-color: var(--gold);
+
+      color: white;
+
+      background: var(--brown);
+    }
+
+    .submit-wrapper {
+      margin-top: 28px;
+
+      text-align: center;
+    }
+
+    .submit-button {
+      width: 100%;
+    }
+
+    /* SUCCESS */
+
+    .success-message {
+      display: none;
+
+      min-height: 360px;
+
+      flex-direction: column;
+
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+    }
+
+    .success-message.active {
+      display: flex;
+
+      animation:
+        successReveal
+        0.8s
+        ease
+        forwards;
+    }
+
+    @keyframes successReveal {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .success-icon {
+      width: 100px;
+      height: 100px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border:
+        1px solid var(--gold-light);
+
+      border-radius: 50%;
+
+      color: var(--gold);
+
+      font-family: var(--serif);
+      font-size: 2.5rem;
+
+      animation:
+        successPulse
+        2s
+        ease-in-out
+        infinite;
+    }
+
+    @keyframes successPulse {
+      0%,
+      100% {
+        box-shadow:
+          0 0 0 0
+          rgba(185,154,85,0);
+      }
+
+      50% {
+        box-shadow:
+          0 0 0 14px
+          rgba(185,154,85,0.08);
+      }
+    }
+
+    .success-message h3 {
+      margin: 28px 0 10px;
+
+      font-family: var(--serif);
+
+      font-size: 2.8rem;
+      font-weight: 500;
+    }
+
+    .success-message p {
+      max-width: 430px;
+
+      margin: 0;
+
+      color: var(--muted);
+
+      line-height: 1.8;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 90px 20px 45px;
+
+      text-align: center;
+
+      background: #493a38;
+
+      color: #f7eee8;
+    }
+
+    .footer-names {
+      font-family: var(--serif);
+
+      font-size: clamp(
+        3.2rem,
+        12vw,
+        7rem
+      );
+
+      font-weight: 400;
+      font-style: italic;
+
+      line-height: 0.95;
+    }
+
+    .footer-date {
+      margin-top: 25px;
+
+      color: #dbc98d;
+
+      font-size: 0.7rem;
+
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+    }
+
+    .footer-note {
+      margin-top: 55px;
+
+      color:
+        rgba(255,255,255,0.45);
+
+      font-size: 0.65rem;
+
+      letter-spacing: 0.08em;
+    }
+
+    /* REVEAL */
+
+    .reveal {
+      opacity: 0;
+
+      transform:
+        translateY(35px);
+
+      transition:
+        opacity
+        0.9s
+        cubic-bezier(0.16,1,0.3,1),
+
+        transform
+        0.9s
+        cubic-bezier(0.16,1,0.3,1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+
+      transform:
+        translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    /* TABLET */
+
+    @media (min-width: 640px) {
+      .container {
+        width:
+          min(
+            calc(100% - 48px),
+            var(--container)
+          );
+      }
+
+      .section {
+        padding:
+          120px 0;
+      }
+
+      .countdown {
+        grid-template-columns:
+          repeat(4, 1fr);
+      }
+
+      .countdown-item {
+        min-height: 145px;
+      }
+
+      .gallery {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .gallery-item:nth-child(1) {
+        grid-row: span 2;
+      }
+
+      .gallery-item:nth-child(4) {
+        grid-column: span 2;
+      }
+
+      .confirm-container {
+        padding: 50px;
+      }
+
+      .submit-button {
+        width: auto;
+
+        min-width: 230px;
+      }
+    }
+
+    /* DESKTOP */
+
+    @media (min-width: 900px) {
+      .nav-links {
+        display: flex;
+      }
+
+      .nav-confirm {
+        display: none;
+      }
+
+      .hero::before {
+        inset: 42px;
+      }
+
+      .location-card {
+        grid-template-columns:
+          0.85fr 1.15fr;
+      }
+
+      .location-content {
+        padding: 70px 55px;
+      }
+
+      .gallery {
+        grid-template-columns:
+          1.25fr 1fr 1fr;
+
+        grid-template-rows:
+          280px 280px;
+      }
+
+      .gallery-item {
+        min-height: 0;
+      }
+
+      .gallery-item:nth-child(1) {
+        grid-row: span 2;
+      }
+
+      .gallery-item:nth-child(4) {
+        grid-column: span 2;
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 500px) {
+      .hero {
+        padding-top: 120px;
+      }
+
+      .hero::before {
+        inset: 16px;
+      }
+
+      .hero-names {
+        font-size: clamp(
+          3.5rem,
+          16vw,
+          5.5rem
+        );
+      }
+
+      .hero-small {
+        padding: 0 20px;
+
+        line-height: 1.7;
+      }
+
+      .attendance-buttons {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        line-height: 1;
+      }
+
+      .scroll-indicator {
+        bottom: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration:
+          0.01ms !important;
+
+        animation-iteration-count:
+          1 !important;
+
+        transition-duration:
+          0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <div class="nav-wrapper">
+    <nav class="navbar">
+
+      <a href="#home" class="logo">
+        М & А
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">
+          Приглашение
+        </a>
+
+        <a href="#program">
+          Программа
+        </a>
+
+        <a href="#location">
+          Локация
+        </a>
+
+        <a href="#gallery">
+          Галерея
+        </a>
+
+        <a href="#confirm">
+          Подтверждение
+        </a>
+      </div>
+
+      <a
+        href="#confirm"
+        class="nav-confirm"
+      >
+        Ответить
+      </a>
+
+    </nav>
+  </div>
+
+
+  <!-- HERO -->
+
+  <header class="hero" id="home">
+
+    <div class="hero-glow"></div>
+
+    <div id="petals"></div>
+
+    <div class="hero-content">
+
+      <div class="hero-small">
+        Мы приглашаем вас разделить этот день с нами
+      </div>
+
+      <h1 class="hero-names">
+
+        Мехрона
+
+        <span class="amp">
+          &
+        </span>
+
+        Аминодоб
+
+      </h1>
+
+      <div class="hero-divider"></div>
+
+      <p class="hero-date">
+        06 сентября 2026 · 18:00
+      </p>
+
+      <p class="hero-place">
+        Ресторан Тайга · Душанбе
+      </p>
+
+      <div class="hero-cta">
+
+        <a
+          href="#about"
+          class="gold-button"
+        >
+          Открыть приглашение
+          <span>↓</span>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <a
+      href="#about"
+      class="scroll-indicator"
+    >
+      <span>
+        Листайте
+      </span>
+
+      <div class="scroll-line"></div>
+    </a>
+
+  </header>
+
+
+  <!-- INVITATION -->
+
+  <section
+    class="section intro"
+    id="about"
+  >
+    <div class="container">
+
+      <div class="intro-monogram reveal">
+        МА
+      </div>
+
+      <div class="eyebrow reveal">
+        Дорогие родные и друзья
+      </div>
+
+      <h2 class="section-title reveal">
+        С любовью приглашаем вас
+      </h2>
+
+      <p class="intro-text reveal">
+        Есть дни, которые становятся частью нашей истории навсегда.
+        Мы будем счастливы, если один из самых важных дней нашей жизни
+        вы разделите вместе с нами.
+      </p>
+
+      <p class="section-subtitle reveal">
+        В этот вечер мы хотим быть рядом с людьми,
+        которые занимают особенное место в наших сердцах.
+        Ваше присутствие станет прекрасной частью
+        начала нашей семейной истории.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- COUNTDOWN -->
+
+  <section class="section countdown-section">
+
+    <div class="container">
+
+      <div class="countdown-wrapper glass-card reveal">
+
+        <div class="eyebrow">
+          До нашей свадьбы
+        </div>
+
+        <h2 class="section-title">
+          Осталось совсем немного
+        </h2>
+
+        <div
+          class="countdown"
+          id="countdown"
+        >
+
+          <div class="countdown-item">
+
+            <span
+              class="countdown-number"
+              id="days"
+            >
+              00
+            </span>
+
+            <span class="countdown-label">
+              Дней
+            </span>
+
+          </div>
+
+
+          <div class="countdown-item">
+
+            <span
+              class="countdown-number"
+              id="hours"
+            >
+              00
+            </span>
+
+            <span class="countdown-label">
+              Часов
+            </span>
+
+          </div>
+
+
+          <div class="countdown-item">
+
+            <span
+              class="countdown-number"
+              id="minutes"
+            >
+              00
+            </span>
+
+            <span class="countdown-label">
+              Минут
+            </span>
+
+          </div>
+
+
+          <div class="countdown-item">
+
+            <span
+              class="countdown-number"
+              id="seconds"
+            >
+              00
+            </span>
+
+            <span class="countdown-label">
+              Секунд
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROGRAM -->
+
+  <section
+    class="section"
+    id="program"
+  >
+
+    <div class="container">
+
+      <div class="eyebrow reveal">
+        06 сентября
+      </div>
+
+      <h2 class="section-title reveal">
+        Программа вечера
+      </h2>
+
+      <p class="section-subtitle reveal">
+        Мы подготовили вечер,
+        наполненный красивыми моментами,
+        тёплыми словами,
+        музыкой и праздником.
+      </p>
+
+
+      <div class="program">
+
+        <div class="timeline">
+
+          <div class="timeline-item reveal">
+
+            <div>
+              <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-content">
+
+              <span class="timeline-time">
+                18:00
+              </span>
+
+              <h3 class="timeline-title">
+                Церемония
+              </h3>
+
+              <p class="timeline-description">
+                Начало нашего особенного вечера.
+                Просим гостей прибыть немного заранее,
+                чтобы мы могли начать церемонию вместе.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="timeline-item reveal">
+
+            <div>
+              <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-content">
+
+              <span class="timeline-time">
+                19:30
+              </span>
+
+              <h3 class="timeline-title">
+                Праздничный ужин
+              </h3>
+
+              <p class="timeline-description">
+                Соберёмся вместе за праздничным столом,
+                чтобы разделить этот вечер,
+                тёплые слова
+                и самые важные моменты.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="timeline-item reveal">
+
+            <div>
+              <div class="timeline-dot"></div>
+            </div>
+
+            <div class="timeline-content">
+
+              <span class="timeline-time">
+                21:00
+              </span>
+
+              <h3 class="timeline-title">
+                Танцы
+              </h3>
+
+              <p class="timeline-description">
+                Музыка, улыбки и праздник,
+                который мы надеемся запомнить
+                вместе с вами на долгие годы.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- LOCATION -->
+
+  <section
+    class="section"
+    id="location"
+  >
+
+    <div class="container">
+
+      <div class="eyebrow reveal">
+        Место встречи
+      </div>
+
+      <h2 class="section-title reveal">
+        Локация
+      </h2>
+
+
+      <div class="location-card reveal">
+
+        <div class="location-content">
+
+          <div class="location-label">
+            Свадебное торжество
+          </div>
+
+          <h3 class="location-title">
+           Ресторан Тайга
+          </h3>
+
+          <p class="location-address">
+            Душанбе, 3-й проезд улицы Бободжана Гафурова
+            <br>
+            06 сентября 2026 · 18:00
+          </p>
+
+          <a
+            class="gold-button"
+            href="https://www.google.com/maps/search/?api=1&amp;query=Ресторан+Тайга,+3-й+проезд+улицы+Бободжана+Гафурова,+Душанбе"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Открыть карту
+            <span>↗</span>
+          </a>
+
+        </div>
+
+
+        <a
+          href="https://www.google.com/maps/search/?api=1&amp;query=Ресторан+Тайга,+3-й+проезд+улицы+Бободжана+Гафурова,+Душанбе"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="location-map"
+          aria-label="Открыть ресторан Тайга на карте"
+        >
+
+          <div class="map-overlay">
+
+            <div class="map-pin">
+              ♡
+            </div>
+
+          </div>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GALLERY -->
+
+  <section
+    class="section"
+    id="gallery"
+  >
+
+    <div class="container">
+
+      <div class="eyebrow reveal">
+        Наша история
+      </div>
+
+      <h2 class="section-title reveal">
+        Галерея
+      </h2>
+
+      <p class="section-subtitle reveal">
+       
+        Нажмите на изображение,
+        чтобы открыть его полностью.
+      </p>
+
+
+      <div class="gallery">
+
+        <button
+          class="gallery-item reveal"
+          data-image="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=90"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80"
+            alt="Свадебная фотография"
+          >
+
+        </button>
+
+
+        <button
+          class="gallery-item reveal reveal-delay-1"
+          data-image="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1600&q=90"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80"
+            alt="Свадебные детали"
+          >
+
+        </button>
+
+
+        <button
+          class="gallery-item reveal reveal-delay-2"
+          data-image="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1600&q=90"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80"
+            alt="Пара"
+          >
+
+        </button>
+
+
+        <button
+          class="gallery-item reveal"
+          data-image="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=90"
+        >
+
+          <img
+            src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80"
+            alt="Свадебная церемония"
+          >
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONFIRMATION -->
+
+  <section
+    class="section confirm-section"
+    id="confirm"
+  >
+
+    <div class="container">
+
+      <div class="eyebrow reveal">
+        Будете ли вы с нами?
+      </div>
+
+      <h2 class="section-title reveal">
+        Подтвердите присутствие
+      </h2>
+
+      <p class="section-subtitle reveal">
+        Пожалуйста, сообщите нам,
+        сможете ли вы разделить
+        этот особенный день вместе с нами.
+      </p>
+
+
+      <div class="confirm-container glass-card reveal">
+
+        <form id="confirmForm">
+
+          <div class="form-grid">
+
+            <div class="field-group">
+
+              <label for="guestName">
+                Ваше имя
+              </label>
+
+              <input
+                id="guestName"
+                name="name"
+                type="text"
+                placeholder="Имя и фамилия"
+                required
+              >
+
+            </div>
+
+
+            <div class="field-group">
+
+              <label>
+                Вы сможете присутствовать?
+              </label>
+
+              <div class="attendance-buttons">
+
+
+                <div class="attendance-option">
+
+                  <input
+                    id="attendYes"
+                    name="attendance"
+                    type="radio"
+                    value="yes"
+                    required
+                  >
+
+                  <label for="attendYes">
+                    Да, с радостью
+                  </label>
+
+                </div>
+
+
+                <div class="attendance-option">
+
+                  <input
+                    id="attendNo"
+                    name="attendance"
+                    type="radio"
+                    value="no"
+                  >
+
+                  <label for="attendNo">
+                    К сожалению, нет
+                  </label>
+
+                </div>
+
+
+              </div>
+
+            </div>
+
+
+            <div class="field-group">
+
+              <label for="message">
+                Сообщение для молодожёнов
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Оставьте пожелание или сообщение..."
+              ></textarea>
+
+            </div>
+
+          </div>
+
+
+          <div class="submit-wrapper">
+
+            <button
+              class="gold-button submit-button"
+              type="submit"
+            >
+              Отправить ответ
+              <span>♡</span>
+            </button>
+
+          </div>
+
+        </form>
+
+
+        <div
+          class="success-message"
+          id="successMessage"
+        >
+
+          <div class="success-icon">
+            ✓
+          </div>
+
+          <h3>
+            Спасибо!
+          </h3>
+
+          <p>
+            Ваш ответ получен.
+            Спасибо, что сообщили нам
+            о своём присутствии.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+ 
+
+  <footer>
+
+    <div class="footer-names">
+      Мехрона & Аминодоб
+    </div>
+
+    <div class="footer-date">
+      06 · 09 · 2026 · Душанбе
+    </div>
+
+    <div class="footer-note">
+      С любовью ждём вас
+      на нашем празднике
+    </div>
+
+  </footer>
+
+
+
+
+  <div
+    class="lightbox"
+    id="lightbox"
+    aria-hidden="true"
+  >
+
+    <button
+      class="lightbox-close"
+      id="lightboxClose"
+      aria-label="Закрыть"
+    >
+      ×
+    </button>
+
+    <img
+      id="lightboxImage"
+      src=""
+      alt="Фотография"
+    >
+
+  </div>
+
+
+  <script>
+
+
+    const weddingDate =
+      new Date(
+        "2026-09-06T18:00:00+05:00"
+      );
+
+    const daysElement =
+      document.getElementById("days");
+
+    const hoursElement =
+      document.getElementById("hours");
+
+    const minutesElement =
+      document.getElementById("minutes");
+
+    const secondsElement =
+      document.getElementById("seconds");
+
+
+    function updateCountdown() {
+
+      const now =
+        new Date();
+
+      const difference =
+        weddingDate.getTime()
+        -
+        now.getTime();
+
+
+      if (difference <= 0) {
+
+        daysElement.textContent = "00";
+        hoursElement.textContent = "00";
+        minutesElement.textContent = "00";
+        secondsElement.textContent = "00";
+
+        return;
+      }
+
+
+      const days =
+        Math.floor(
+          difference /
+          (1000 * 60 * 60 * 24)
+        );
+
+      const hours =
+        Math.floor(
+          (
+            difference /
+            (1000 * 60 * 60)
+          ) % 24
+        );
+
+      const minutes =
+        Math.floor(
+          (
+            difference /
+            (1000 * 60)
+          ) % 60
+        );
+
+      const seconds =
+        Math.floor(
+          (
+            difference /
+            1000
+          ) % 60
+        );
+
+
+      daysElement.textContent =
+        String(days).padStart(2, "0");
+
+      hoursElement.textContent =
+        String(hours).padStart(2, "0");
+
+      minutesElement.textContent =
+        String(minutes).padStart(2, "0");
+
+      secondsElement.textContent =
+        String(seconds).padStart(2, "0");
+
+    }
+
+
+    updateCountdown();
+
+    setInterval(
+      updateCountdown,
+      1000
+    );
+
+
+    /* PETALS */
+
+    const petalsContainer =
+      document.getElementById(
+        "petals"
+      );
+
+
+    function createPetal() {
+
+      const petal =
+        document.createElement(
+          "div"
+        );
+
+      petal.classList.add(
+        "petal"
+      );
+
+
+      const size =
+        Math.random() * 9 + 6;
+
+      const position =
+        Math.random() * 100;
+
+      const fallDuration =
+        Math.random() * 8 + 8;
+
+      const swingDuration =
+        Math.random() * 3 + 2;
+
+      const delay =
+        Math.random() * -14;
+
+
+      petal.style.width =
+        `${size}px`;
+
+      petal.style.height =
+        `${size * 1.45}px`;
+
+      petal.style.left =
+        `${position}%`;
+
+      petal.style.opacity =
+        Math.random() * 0.45 + 0.25;
+
+      petal.style.animationDuration =
+        `${fallDuration}s, ${swingDuration}s`;
+
+      petal.style.animationDelay =
+        `${delay}s, ${delay}s`;
+
+
+      petalsContainer.appendChild(
+        petal
+      );
+
+    }
+
+
+    for (
+      let i = 0;
+      i < 26;
+      i++
+    ) {
+
+      createPetal();
+
+    }
+
+
+
+
+    const revealElements =
+      document.querySelectorAll(
+        ".reveal"
+      );
+
+
+    const revealObserver =
+      new IntersectionObserver(
+
+        (
+          entries,
+          observer
+        ) => {
+
+          entries.forEach(
+            entry => {
+
+              if (
+                !entry.isIntersecting
+              ) {
+                return;
+              }
+
+              entry.target
+                .classList
+                .add("visible");
+
+              observer.unobserve(
+                entry.target
+              );
+
+            }
+          );
+
+        },
+
+        {
+          threshold: 0.12,
+
+          rootMargin:
+            "0px 0px -40px 0px"
+        }
+
+      );
+
+
+    revealElements.forEach(
+      element => {
+
+        revealObserver.observe(
+          element
+        );
+
+      }
+    );
+
+
+    /* LIGHTBOX */
+
+    const galleryItems =
+      document.querySelectorAll(
+        ".gallery-item"
+      );
+
+    const lightbox =
+      document.getElementById(
+        "lightbox"
+      );
+
+    const lightboxImage =
+      document.getElementById(
+        "lightboxImage"
+      );
+
+    const lightboxClose =
+      document.getElementById(
+        "lightboxClose"
+      );
+
+
+    function openLightbox(image) {
+
+      lightboxImage.src =
+        image;
+
+      lightbox.classList.add(
+        "active"
+      );
+
+      lightbox.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.classList.add(
+        "no-scroll"
+      );
+
+    }
+
+
+    function closeLightbox() {
+
+      lightbox.classList.remove(
+        "active"
+      );
+
+      lightbox.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      document.body.classList.remove(
+        "no-scroll"
+      );
+
+      setTimeout(
+        () => {
+
+          lightboxImage.src = "";
+
+        },
+        350
+      );
+
+    }
+
+
+    galleryItems.forEach(
+      item => {
+
+        item.addEventListener(
+          "click",
+          () => {
+
+            const image =
+              item.dataset.image;
+
+            openLightbox(
+              image
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+    lightboxClose.addEventListener(
+      "click",
+      closeLightbox
+    );
+
+
+    lightbox.addEventListener(
+      "click",
+      event => {
+
+        if (
+          event.target === lightbox
+        ) {
+
+          closeLightbox();
+
+        }
+
+      }
+    );
+
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key === "Escape"
+          &&
+          lightbox.classList.contains(
+            "active"
+          )
+        ) {
+
+          closeLightbox();
+
+        }
+
+      }
+    );
+
+
+
+
+    const confirmForm =
+      document.getElementById(
+        "confirmForm"
+      );
+
+    const successMessage =
+      document.getElementById(
+        "successMessage"
+      );
+
+
+    confirmForm.addEventListener(
+      "submit",
+      event => {
+
+        event.preventDefault();
+
+
+        const formData =
+          new FormData(
+            confirmForm
+          );
+
+        const response =
+          Object.fromEntries(
+            formData.entries()
+          );
+
+
+        console.log(
+          "Wedding response:",
+          response
+        );
+
+
+
+        confirmForm.style.transition =
+          "opacity .4s ease, transform .4s ease";
+
+        confirmForm.style.opacity =
+          "0";
+
+        confirmForm.style.transform =
+          "translateY(-12px)";
+
+
+        setTimeout(
+          () => {
+
+            confirmForm.style.display =
+              "none";
+
+            successMessage
+              .classList
+              .add("active");
+
+          },
+          400
+        );
+
+      }
+    );
+
+
+    /* SMOOTH SCROLL */
+
+    document
+      .querySelectorAll(
+        'a[href^="#"]'
+      )
+      .forEach(
+        anchor => {
+
+          anchor.addEventListener(
+            "click",
+            event => {
+
+              const id =
+                anchor.getAttribute(
+                  "href"
+                );
+
+              if (id === "#") {
+                return;
+              }
+
+              const section =
+                document.querySelector(
+                  id
+                );
+
+              if (!section) {
+                return;
+              }
+
+              event.preventDefault();
+
+              const offset =
+                80;
+
+              const top =
+                section
+                  .getBoundingClientRect()
+                  .top
+                +
+                window.scrollY
+                -
+                offset;
+
+              window.scrollTo({
+                top,
+                behavior: "smooth"
+              });
+
+            }
+          );
+
+        }
+      );
+
+
+    /* HERO PARALLAX */
+
+    const heroContent =
+      document.querySelector(
+        ".hero-content"
+      );
+
+    const heroGlow =
+      document.querySelector(
+        ".hero-glow"
+      );
+
+    let ticking = false;
+
+
+    window.addEventListener(
+      "scroll",
+      () => {
+
+        if (ticking) {
+          return;
+        }
+
+        requestAnimationFrame(
+          () => {
+
+            const scroll =
+              window.scrollY;
+
+            if (
+              scroll
+              <
+              window.innerHeight
+            ) {
+
+              heroContent.style.transform =
+                `translateY(${scroll * 0.08}px)`;
+
+              heroGlow.style.transform =
+                `translateY(${scroll * 0.12}px)`;
+
+            }
+
+            ticking = false;
+
+          }
+        );
+
+        ticking = true;
+
+      },
+      {
+        passive: true
+      }
+    );
+
+  </script>
+
+</body>
+</html>
