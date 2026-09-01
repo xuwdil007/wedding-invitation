@@ -2477,6 +2477,9 @@
 
   <script>
 
+    // Вставьте сюда URL веб-приложения Google Apps Script после его публикации.
+    const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbwWn4a42E8EzmVRvJDOl466h7rSj0WF4OInuy38tlvhXKJgeDEUXqxcmnbU7km4KvG9/exec";
+
 
     const weddingDate =
       new Date(
@@ -2853,7 +2856,7 @@
 
     confirmForm.addEventListener(
       "submit",
-      event => {
+      async event => {
 
         event.preventDefault();
 
@@ -2863,16 +2866,35 @@
             confirmForm
           );
 
-        const response =
-          Object.fromEntries(
-            formData.entries()
+        if (RSVP_ENDPOINT.includes("PASTE_")) {
+          alert("Форма ещё не подключена. Добавьте адрес Google Apps Script.");
+          return;
+        }
+
+        const submitButton =
+          confirmForm.querySelector('[type="submit"]');
+
+        const originalButtonText =
+          submitButton.innerHTML;
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Отправляем…";
+
+        try {
+          await fetch(
+            RSVP_ENDPOINT,
+            {
+              method: "POST",
+              mode: "no-cors",
+              body: new URLSearchParams(formData)
+            }
           );
-
-
-        console.log(
-          "Wedding response:",
-          response
-        );
+        } catch (error) {
+          submitButton.disabled = false;
+          submitButton.innerHTML = originalButtonText;
+          alert("Не удалось отправить ответ. Проверьте интернет и попробуйте ещё раз.");
+          return;
+        }
 
 
 
