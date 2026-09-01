@@ -1135,6 +1135,29 @@
       gap: 12px;
     }
 
+    .personal-gallery {
+      max-width: 920px;
+      margin-right: auto;
+      margin-left: auto;
+      gap: 22px;
+    }
+
+    .personal-gallery .gallery-item {
+      min-height: 0;
+      aspect-ratio: 3 / 4;
+      border: 5px solid rgba(255,255,255,0.78);
+      border-radius: 28px;
+      box-shadow: 0 24px 60px rgba(76,58,56,0.14);
+    }
+
+    .personal-gallery .gallery-item:first-child img {
+      object-position: 50% 58%;
+    }
+
+    .personal-gallery .gallery-item:last-child img {
+      object-position: 50% 62%;
+    }
+
     .gallery-item {
       position: relative;
 
@@ -1667,12 +1690,12 @@
           repeat(2, 1fr);
       }
 
-      .gallery-item:nth-child(1) {
-        grid-row: span 2;
+      .personal-gallery {
+        padding-bottom: 55px;
       }
 
-      .gallery-item:nth-child(4) {
-        grid-column: span 2;
+      .personal-gallery .gallery-item:last-child {
+        transform: translateY(55px);
       }
 
       .confirm-container {
@@ -2259,15 +2282,15 @@
       </p>
 
 
-      <div class="gallery">
+      <div class="gallery personal-gallery">
 
         <button
           class="gallery-item reveal"
-          data-image="photo_2026-09-01_18-08-38.jpg?v=2"
+          data-image="photo_2026-09-01_18-08-38.jpg?v=4"
         >
 
           <img
-            src="photo_2026-09-01_18-08-38.jpg?v=2"
+            src="photo_2026-09-01_18-08-38.jpg?v=4"
             alt="Фотография невесты у воды"
           >
 
@@ -2275,26 +2298,13 @@
 
 
         <button
-          class="gallery-item reveal reveal-delay-2"
-          data-image="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1600&q=90"
+          class="gallery-item reveal reveal-delay-1"
+          data-image="photo_2026-09-01_19-03-07.jpg?v=1"
         >
 
           <img
-            src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80"
-            alt="Пара"
-          >
-
-        </button>
-
-
-        <button
-          class="gallery-item reveal"
-          data-image="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=90"
-        >
-
-          <img
-            src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80"
-            alt="Свадебная церемония"
+            src="photo_2026-09-01_19-03-07.jpg?v=1"
+            alt="Фотография жениха и невесты в саду"
           >
 
         </button>
